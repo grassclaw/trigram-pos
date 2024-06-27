@@ -13,10 +13,7 @@ from collections import Counter
 f = open('Texts/test.txt','r')
 #Read text, lowercase, and clean using regex import
 text = re.sub(r'[-\(\)\"#\/@;:<>\,\{\}\-=~|\.\?\!\*\[\]\']', '',f.read().lower())
-# TRIGRAM and POS list and occurrence tally.
-# Create CSV list and POS Frequency Distribution array in terms of trigrams
-t_grams = []
-pos_f = [] 
+# Tockenize and store parts of speech
 # This is a slow process...expect delays for tokenize process (6s+)
 print('-----ENTERING POS TOKENIZE PROCESS------')
 print('-----Approx Wait 10s ------')
@@ -26,8 +23,8 @@ pos_t = pos_tag(word_tokenize(text))
 found = False
 m_sep = " "
 print('-----ENTERING TRIGRAM UNIQUE/COUNT PHASE------')
-print('-----Approx Wait 10min ------')
-# res = Counter(map(''.join, zip(test_str, test_str[1:]))) 
+print('-----Approx Wait up to 7s ------')
+# TRIGRAM and POS list and occurrence tally.
 freq_tri = {}
 freq_pos_tri = {}
 freq_pos_uni = {}
