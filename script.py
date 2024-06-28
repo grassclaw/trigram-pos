@@ -91,4 +91,5 @@ ax.invert_yaxis()  # labels read top-to-bottom
 ax.set_xlabel('Frequency')
 ax.set_title('POS Distribution')
 
+plt.savefig('Speech.png', bbox_inches='tight')
 plt.show()
