@@ -75,7 +75,7 @@ plt.figure(figsize=(10,100))
 plt.rcParams['figure.figsize'] = [100,200]
 fig,(axt,axu) = plt.subplots(1,2)
 
-# POS-Unigram Frequency data plots
+# POS-Trigram Frequency data plots
 # params
 pos_l = list(freq_pos_tri.keys())
 y_pos = np.arange(len(pos_l))
@@ -83,12 +83,12 @@ freq = list(freq_pos_tri.values())
 # graph settings
 axt.barh(y_pos, freq, align='center')
 axt.set_yticks(y_pos, labels=pos_l)
-axt.invert_yaxis()  # labels read top-to-bottom
+axt.invert_yaxis()  
 axt.set_xlabel('POS Uni Frequency')
 axt.set_ylabel('POS Trigram')
 axt.set_title('Distribution')
 
-# POS-Trigram Frequency data plots
+# POS-Unigram Frequency data plots
 # params
 pos_l_u = list(freq_pos_uni.keys())
 y_pos_u = np.arange(len(pos_l_u))
@@ -96,7 +96,7 @@ freq_u = list(freq_pos_uni.values())
 # graph settings
 axu.barh(y_pos_u, freq_u, align='center')
 axu.set_yticks(y_pos_u, labels=pos_l_u)
-axu.invert_yaxis()  # labels read top-to-bottom
+axu.invert_yaxis()  
 axu.set_ylabel('POS Unigram')
 axu.set_xlabel('POS Tri Frequency')
 
