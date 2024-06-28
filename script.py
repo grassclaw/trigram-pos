@@ -10,7 +10,7 @@ import re
 from collections import Counter 
 
 # Open text file to clean/preprocess
-f = open('Texts/test.txt','r')
+f = open('Texts/dialog1.txt','r')
 # Tockenize and store parts of speech
 # This is a slow process...expect delays for tokenize process (6s+)
 print('-----ENTERING POS TOKENIZE PROCESS------')
@@ -72,8 +72,8 @@ print('-----Creating POS Freq Dist Charts------')
 print('-----Approx Wait up to 14s ------')
 
 plt.figure(figsize=(10,100)) 
-plt.rcParams['figure.figsize'] = [30,200]
-fig,(axt,axu) = plt.subplots(2)
+plt.rcParams['figure.figsize'] = [100,200]
+fig,(axt,axu) = plt.subplots(1,2)
 
 # POS-Unigram Frequency data plots
 # params
