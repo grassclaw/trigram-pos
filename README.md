@@ -24,7 +24,7 @@ If the script runs successfully, you will see the following terminal outputs dur
 -----Creating POS Freq Dist Charts------
 -----Approx Wait up to 14s ------
 ```
-###### CSV - Trigram.csv
+###### CSV - Trigrams.csv
 A CSV file with two columns (trigram, occurrences) and an image with trigram Parts of Speech (POS) and unigram POS are produces.
 
 ###### Images - Speech.png

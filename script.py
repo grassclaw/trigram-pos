@@ -54,8 +54,8 @@ f.close()
 # WRITE TO CSV now that trigrams are counted
 print('-----Writing CSV FILE------')
 print('-----Approx Wait up to .2s ------')
-# Create and open Trigram.csv (2 cols Trigram && Occurrences)
-with open('Outputs/Trigram.csv', 'a+') as c:
+# Create and open Trigrams.csv (2 cols Trigram && Occurrences)
+with open('Outputs/Trigrams.csv', 'a+') as c:
     # Reset cursor to overwrite csv if already exists
     c.seek(0)
     c.truncate()
@@ -100,4 +100,4 @@ axu.invert_yaxis()  # labels read top-to-bottom
 axu.set_ylabel('POS Unigram')
 axu.set_xlabel('POS Tri Frequency')
 
-plt.savefig('Outputs/Speech.png', dpi=150, bbox_inches='tight')
+plt.savefig('Outputs/Speech.jpg', dpi=150, bbox_inches='tight')
