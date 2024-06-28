@@ -69,27 +69,35 @@ with open('Outputs/Trigram.csv', 'a+') as c:
 
 # POS IMAGE - Speech.jpg frequency distribution horizontal chart
 print('-----Creating POS Freq Dist Charts------')
-print('-----Approx Wait up to .2s ------')
+print('-----Approx Wait up to 14s ------')
 
-print(len(freq_pos_tri))
-print(len(freq_pos_uni))
-print(freq_pos_uni)
-# Fixing random state for reproducibility
-np.random.seed(19680801)
+plt.figure(figsize=(10,100)) 
+plt.rcParams['figure.figsize'] = [30,200]
+fig,(axt,axu) = plt.subplots(2)
 
-fig, ax = plt.subplots()
-
-# Example data
-pos_l = list(freq_pos_uni.keys())
+# POS-Unigram Frequency data plots
+# params
+pos_l = list(freq_pos_tri.keys())
 y_pos = np.arange(len(pos_l))
-freq = list(freq_pos_uni.values())
-error = np.random.rand(len(pos_l))
+freq = list(freq_pos_tri.values())
+# graph settings
+axt.barh(y_pos, freq, align='center')
+axt.set_yticks(y_pos, labels=pos_l)
+axt.invert_yaxis()  # labels read top-to-bottom
+axt.set_xlabel('POS Uni Frequency')
+axt.set_ylabel('POS Trigram')
+axt.set_title('Distribution')
 
-ax.barh(y_pos, freq, xerr=error, align='center')
-ax.set_yticks(y_pos, labels=pos_l)
-ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('Frequency')
-ax.set_title('POS Distribution')
+# POS-Trigram Frequency data plots
+# params
+pos_l_u = list(freq_pos_uni.keys())
+y_pos_u = np.arange(len(pos_l_u))
+freq_u = list(freq_pos_uni.values())
+# graph settings
+axu.barh(y_pos_u, freq_u, align='center')
+axu.set_yticks(y_pos_u, labels=pos_l_u)
+axu.invert_yaxis()  # labels read top-to-bottom
+axu.set_ylabel('POS Unigram')
+axu.set_xlabel('POS Tri Frequency')
 
-plt.savefig('Speech.png', bbox_inches='tight')
-plt.show()
+plt.savefig('Outputs/Speech.png', dpi=150, bbox_inches='tight')
